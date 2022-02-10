@@ -29,7 +29,7 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
     Route::get('/semester-registration/get-student-info', [SemesterRegistrationController::class, 'getStudentInfo'])->name('semester.registration.getStudentInfo');
 
     // import files to database
-//    Route::get('/importCountries', [ImportController::class, 'importCountries']);
+    Route::get('/importPromoCodes', [ImportController::class, 'importPromoCodes']);
 
     // apply coupon
     Route::get('/apply-coupon', [CouponController::class, 'applyCoupon'])->name('apply.coupon');
