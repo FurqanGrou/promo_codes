@@ -15,9 +15,9 @@ class ImportController extends Controller
         ini_set('memory_limit', '60m');
     }
 
-    public function importPromoCodes(Request $request)
+    public function importPromoCodes()
     {
-        Excel::import(new PromoCodesImport(), '');
+        Excel::import(new PromoCodesImport(), 'promo_codes.xlsx');
 
         return back()->withSuccess('تم تحديث بيانات الطلاب بنجاح');
     }

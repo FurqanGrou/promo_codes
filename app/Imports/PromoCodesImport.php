@@ -10,11 +10,9 @@ use Maatwebsite\Excel\Concerns\WithHeadingRow;
 
 class PromoCodesImport implements ToModel, WithHeadingRow, WithChunkReading, WithBatchInserts
 {
-    public $section;
 
-    public function __construct($section)
+    public function __construct()
     {
-        $this->section = $section;
     }
     /**
      * @param array $row
