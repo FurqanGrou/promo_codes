@@ -12,6 +12,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Cairo:wght@200;300;400;500;600;700;800;900&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.15.3/css/all.css" integrity="sha384-SZXxX4whJ79/gErwcOYf+zWLeJdY/qpuqC4cAa9rOGUstPomtqpuNWT9wdPEn2fk" crossorigin="anonymous">
+    <link rel="icon" type="image/x-icon" href="{{ asset('/images/favicon.ico') }}">
 
     <style>
 
@@ -423,12 +424,12 @@
                 @endif
 
                 <form id="msform" action="{{ route('semester.subscribeOneToOne') }}" method="POST" enctype="multipart/form-data">
-                    @csrf
+                @csrf
 
                 <!-- progressbar -->
                     <ul id="progressbar" class="d-flex flex-row">
                         <li class="active" id="account"><strong>{{ __('resubscribe.Information and notes') }}</strong></li>
-                        <li id="personal"><strong>{{ __('resubscribe.Register') }}</strong></li>
+                        <li id="personal"><strong>{{ __('Registration') }}</strong></li>
                         <li id="confirm"><strong>{{ __('resubscribe.Payment and termination') }}</strong></li>
                     </ul>
                     <div class="progress">
@@ -446,147 +447,394 @@
 
                             @if(app()->getLocale() == 'ar')
                                 <p class="text-right">
-
-                                    أعزاءنا أولياء الأمور.. بناء على طلب العديد من أولياء الأمور، تعلن مجموعة الفرقان عن إطلاق المرحلة الأولى من نظام التعليم الفردي لطلاب وطالبات قسم الحفظ ابتداء من الفصل الدراسي القادم، حيث سيتم في المرحلة الأولى تطبيق النظام على عدد محدد من طلاب وطالبات قسم الحفظ ، وفي المرحلة الثانية سيتم إتاحة خيار التعليم الفردي لبقية الأقسام، حيث يتميز نظام التعليم الفردي بتخصيص معلم خاص لكل طالب، وتقليل مدة الحلقة مع الحفاظ على جودة التعليم المعهودة، يرجى الاطلاع على التفاصيل التالية:
-
-
+                                    للتسجيل بداية نرجو الاطلاع على <span style="color: red;">المسار الزمني</span>  الخاص بالدورة  رقم 3681
                                     <br>
                                     <br>
+                                    <span class="d-block text-center">المسار الزمني للدورة رقم 3681 </span>
+                                </p>
 
                                 <table class="ltr-table" border="2">
                                     <tbody>
                                     <tr>
-                                        <td>الفئة المستهدفة:</td>
-                                        <td style="color: #48742b;">طلاب وطالبات قسم الحفظ</td>
+                                        <td>إغلاق التسجيل</td>
+                                        <td style="color: #48742b;">الأربعاء 2022/2/16م</td>
                                     </tr>
                                     <tr>
-                                        <td>مدة الحصة:</td>
-                                        <td style="color: #48742b;">ساعة يوميا (5 أيام في الأسبوع)</td>
+                                        <td>اختبار تحديد المستوى</td>
+                                        <td style="color: #48742b;">الثلاثاء 2022/2/22م</td>
                                     </tr>
                                     <tr>
-                                        <td>الفترة:</td>
-                                        <td style="color: #48742b;">يمكن اختيار الوقت المفضل ضمن الأوقات المحددة أدناه</td>
+                                        <td>بداية الدورة</td>
+                                        <td style="color: #48742b;">السبت 2022/2/26م</td>
                                     </tr>
                                     <tr>
-                                        <td>الرسوم الدراسية:</td>
-                                        <td style="color: #48742b;">{{ $course->price }}$ ({{ intval($course->price*3.75) }} ريال) للفصل الدراسي</td>
+                                        <td>نهاية الدورة</td>
+                                        <td style="color: #48742b;">الاثنين 2022/3/7م</td>
                                     </tr>
                                     <tr>
-                                        <td>مدة الفصل الدراسي:</td>
-                                        <td style="color: #48742b;">4 أشهر</td>
+                                        <td>بداية التقوية</td>
+                                        <td style="color: #48742b;">
+                                            السبت والأحد 12-13
+                                            2022/3م
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <td>فتح باب التسجيل للاختبار</td>
+                                        <td style="color: #48742b;">الاثنين 2022/3/7م</td>
+                                    </tr>
+                                    <tr>
+                                        <td>إغلاق باب التسجيل للاختبار</td>
+                                        <td style="color: #48742b;">الأحد 2022/3/13م</td>
+                                    </tr>
+                                    <tr>
+                                        <td>الاختبار</td>
+                                        <td style="color: #48742b;">
+                                            السبت والأحد 19-20
+                                            2022/3م
+                                        </td>
                                     </tr>
                                     </tbody>
                                 </table>
 
                                 <br>
+                                <span class="d-block text-center">الجدول الزمني للدورة</span>
 
+                                <br>
+                                <table class="ltr-table" border="2">
+                                    <tbody>
+                                    <tr>
+                                        <td>وقت بداية الدورة</td>
+                                        <td style="color: #48742b;">07:00مساءً بتوقيت مكة المكرمة</td>
+                                    </tr>
+                                    <tr>
+                                        <td>وقت الاستراحة الأولى</td>
+                                        <td style="color: #48742b;">07:50 مساءً بتوقيت مكة المكرمة</td>
+                                    </tr>
+                                    <tr>
+                                        <td>استئناف الدورة</td>
+                                        <td style="color: #48742b;">08:00مساءً بتوقيت مكة المكرمة</td>
+                                    </tr>
+                                    <tr>
+                                        <td>وقت الاستراحة الثانية</td>
+                                        <td style="color: #48742b;">08:50 مساءً بتوقيت مكة المكرمة</td>
+                                    </tr>
+                                    <tr>
+                                        <td>استئناف الدورة</td>
+                                        <td style="color: #48742b;">09:00 مساءً بتوقيت مكة المكرمة</td>
+                                    </tr>
+                                    <tr>
+                                        <td>وقت نهاية الدورة</td>
+                                        <td style="color: #48742b;">10:30 مساءً بتوقيت مكة المكرمة</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                <br>
                                 <span style="display: block; color: #ea3223; font-weight: bold; text-align: center !important;">
-                                            هام! في حال الرغبة في التسجيل في مسار التعليم الفردي يرجى تعبئة الاستمارة التالية، وستكون بداية الفصل الدراسي الأول للطلاب والطالبات من تاريخ 02/01/2022م الموافق 29/05/1443هـ إلى 28/04/2022م الموافق 27/09/1443هـ.
-                                        </span>
+سجّل الآن في الدورة رقم 3681   برسوم ( قدرها ) 125$ (شاملة) رسوم الحقيبة الالكترونية(..)
+</span>
 
                                 <br>
                                 <br>
 
                                 <span class="d-block text-center" style="font-weight: bold;">
-                                            في حال وجود استفسارات حول آليات سداد الرسوم وخيارات الدفع المتاحة نفيدكم أنه قد تم تخصيص أحد ممثلي قسم الحسابات للرد على استفساراتكم حيال الأمر وتقديم الدعم الكامل عبر المكتب الافتراضي لحل أي عوائق إن شاء الله..
-                                        </span>
-
+كما نرحب باستفساراتكم على البريد الإلكتروني: <a href="mailto:courses@furqangroup.com">courses@furqangroup.com</a> ، ونسعد بانضمامكم معنا في قناة القاعدة النورانية على التليجرام لمتابع كل جديد وذلك عبر الرابط التالي: <a
+                                        href="https://t.me/QaidahNuraniah">https://t.me/QaidahNuraniah</a>                                        </span>
                                 <br>
                                 <br>
-
-                                <span class="d-block text-center" style="color: #ea3223; font-weight: bold;">رابط المكتب الافتراضي:</span>
-                                <a class="text-center w-100 d-block" href="https://furqangroup.zoom.us/j/99947595293">https://furqangroup.zoom.us/j/99947595293</a>
-                                <br>
-
-                                <span class="d-block text-center" style="font-weight: bold !important; color: black; color: #ea3223;">الأسئلة الشائعة:</span>
-
-                                <span class="d-block text-center" style="color: #48742b;">أوقات الاستقبال من (الأحد إلى الخميس):</span>
-
-                                <ul class="text-right">
-                                    <li>9:00 صباحا - 10:00 مساء بتوقيت مكة المكرمة (GMT+3)</li>
-                                    <li>7:00 صباحا - 08:00 مساء بتوقيت المغرب العربي وفرنسا  (GMT+1)</li>
-                                    <li>1:00 صباحا - 02:00 مساء بتوقيت نيويورك ( GMT-5)</li>
-                                </ul>
 
                                 <span class="text-center d-block">مع تمنياتنا للجميع بالتوفيق والنجاح.</span>
 
-                                </p>
-                            @else
-                                <p>
-                                    <span class="d-block">Dear Parents,</span>
-                                    <span class="d-block">
-                                            Furqan Group is pleased to announce the launch of one-to-one classes for students in the memorization (Hifz) program. This initiative comes in response to several requests we have been receiving from parents. The initial phase of one-to-one class project will start from the next semester with limited capacity solely for .students in the memorization trajectory.
+                            @elseif(app()->getLocale() == 'fr')
 
-Students from other trajectories shall be able to .enroll in the second phase of the project.
-                                        </span>
-
+                                <p class="text-right">
+                                    Pour vous inscrire d'abord, veuillez vérifier le <span style="color: red;">calendrier des cours ci-dessous</span>
                                     <br>
-
-                                    <span class="d-block">
-                                            In the one-to-one class system, a private tutor is assigned for each student individually. The class duration is reduced while the quality of education is maintained equally to the regular class :systems. Kindly review the following details:
-                                        </span>
+                                    <br>
+                                    <span class="d-block text-center" style="font-weight: bold;">La chronologie du cours n° 3680</span>
+                                </p>
 
                                 <table class="ltr-table" border="2">
                                     <tbody>
                                     <tr>
-                                        <td>Target group</td>
-                                        <td style="color: #48742b;">Students in Memorization program (Hifz)</td>
+                                        <td>Date limite d'inscription</td>
+                                        <td style="color: #48742b;">mercredi 16/2/ 2022</td>
                                     </tr>
                                     <tr>
-                                        <td>Class duration</td>
-                                        <td style="color: #48742b;">1 hour, 5 days a week (Sunday to Thursday)</td>
+                                        <td>Test préliminaire</td>
+                                        <td style="color: #48742b;">mardi 22/2/2022</td>
                                     </tr>
                                     <tr>
-                                        <td>Time</td>
-                                        <td style="color: #48742b;">The desired session can be chosen below</td>
+                                        <td>Début du cours</td>
+                                        <td style="color: #48742b;">samedi 26/2/2022</td>
                                     </tr>
                                     <tr>
-                                        <td>Fees</td>
-                                        <td style="color: #48742b;">{{ $course->price }}$ ({{ intval($course->price*3.75) }} SAR) per semester</td>
+                                        <td>Fin du cours</td>
+                                        <td style="color: #48742b;">Lundi 03/07/2022</td>
                                     </tr>
                                     <tr>
-                                        <td>Semester duration</td>
-                                        <td style="color: #48742b;">4 months</td>
+                                        <td>ateliers pré-examen</td>
+                                        <td style="color: #48742b;">samedi et dimanche 12-13/3/ 2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Début de l'inscription à l'examen</td>
+                                        <td style="color: #48742b;">Lundi 03/07/2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Date limite d'inscription à l'examen</td>
+                                        <td style="color: #48742b;">dimanche 13/3/2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>L'examen</td>
+                                        <td style="color: #48742b;">samedi et dimanche 19-20/3/2022</td>
                                     </tr>
                                     </tbody>
                                 </table>
 
                                 <br>
-                                <span class="d-block" style="color: #bb271a; font-weight: bold; text-align: center;">
-                                            Important! If you would like to register for the one-to-one class system, please fill out the following form. The First semester is to begin .from 02.01.2022 until 29.04.2022.
-                                        </span>
+                                <span class="d-block text-center">Horaire des cours</span>
 
                                 <br>
+                                <table class="ltr-table" border="2">
+                                    <tbody>
+                                    <tr>
+                                        <td>Heure de début du cours</td>
+                                        <td style="color: #48742b;">19h00 heure de la Mecque</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Première heure de pause</td>
+                                        <td style="color: #48742b;">19h50 heure de la Mecque</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reprise du cours</td>
+                                        <td style="color: #48742b;">20h00 heure de la Mecque</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Deuxième temps de pause</td>
+                                        <td style="color: #48742b;">20h50 heure de la Mecque</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Reprise du cours</td>
+                                        <td style="color: #48742b;">21h00 heure de la Mecque</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Heure de fin du cours</td>
+                                        <td style="color: #48742b;">22h30 heure de la Mecque</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
 
-                                <span class="d-block">
-                                            If you had any questions regarding the payment options and methods, we would like to inform you that you can visit our virtual office where we have assigned one of our representatives from the financial department to answer your questions and help you with that.
-                                        </span>
-
-                                <span class="w-100 text-center d-block" style="color: #bb271a; font-weight: bold;">
-                                            virtual office link:
-                                        </span>
-
-                                <a class="w-100 text-center d-block" href="https://furqangroup.zoom.us/j/99947595293">
-                                    https://furqangroup.zoom.us/j/99947595293
-                                </a>
+                                <br>
+                                <span style="display: block; color: #ea3223; font-weight: bold; text-align: center !important;">
+                                    Inscrivez-vous dès maintenant au cours n° 3681 au tarif de 125 $, incluant les frais du sac électronique
+                                </span>
+                                <br>
                                 <br>
 
-                                <span class="w-100 text-center d-block" style="color: #bb271a; font-weight: bold;">
-                                            Virtual office times:
-                                        </span>
+                                <span class="d-block text-center" style="font-weight: bold;">
+                                    Nous accueillons également vos demandes par e-mail: <a href="mailto:courses@furqangroup.com">courses@furqangroup.com</a>, et nous sommes heureux de vous compter parmi nous sur le Al-Qaida Al-Nuraniah chaîne sur Telegram à
+                                    suivez toutes les dernières nouvelles via le lien suivant: <a href="https://t.me/QaidahNuraniah">https://t.me/QaidahNuraniah</a>
+                                </span>
 
-                                <span class="w-100 text-center d-block" style="color: #48742b; font-weight: bold;">
-                                            From Sunday till Thursday
-                                        </span>
-                                <span class="w-100 text-center d-block" style="color: #bb271a; font-weight: bold;">
-                                            at
-                                        </span>
+                                <br>
+                                <br>
 
-                                <ul>
-                                    <li>09:00AM - 10:00PM Mecca time (GMT + 3)</li>
-                                    <li>07:00AM - 08:00PM Morocco and France time (GMT+1)</li>
-                                    <li>01:00AM - 02:00PM New York time (GMT-5)</li>
-                                </ul>
+                                <span class="w-100 text-center d-block" style="color: black; font-weight: bold;">
+                                    Nous vous souhaitons à tous bonne santé et réussite par la volonté d'Allah.
+                                </span>
+
+                                </p>
+
+                            @elseif(app()->getLocale() == 'ru')
+
+                                <p class="text-right">
+                                    Чтобы сначала зарегистрироваться, пожалуйста, проверьте <span style="color: red;">расписание курса ниже</span>
+                                    <br>
+                                    <br>
+                                    <span class="d-block text-center" style="font-weight: bold;">Хронология курса №3680</span>
+                                </p>
+
+                                <table class="ltr-table" border="2">
+                                    <tbody>
+                                    <tr>
+                                        <td>Крайний срок регистрации</td>
+                                        <td style="color: #48742b;">Среда, 16 февраля 2022 г.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Предварительный тест</td>
+                                        <td style="color: #48742b;">вторник, 22 февраля 2022 г.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Начало курса</td>
+                                        <td style="color: #48742b;">Суббота, 26 февраля 2022 г.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Конец курса</td>
+                                        <td style="color: #48742b;">Понедельник, 03.07.2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>предэкзаменационные семинары</td>
+                                        <td style="color: #48742b;">Суббота и воскресенье 12-13 марта 2022 г.</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Начало регистрации на экзамен</td>
+                                        <td style="color: #48742b;">Понедельник, 03.07.2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Крайний срок регистрации на экзамен</td>
+                                        <td style="color: #48742b;">Воскресенье 13.03.2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Экзамен</td>
+                                        <td style="color: #48742b;">Суббота и воскресенье 19-20 марта 2022 г.</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                <br>
+                                <span class="d-block text-center">Расписание курсов</span>
+
+                                <br>
+                                <table class="ltr-table" border="2">
+                                    <tbody>
+                                    <tr>
+                                        <td>Время начала курса</td>
+                                        <td style="color: #48742b;">19:00 по времени Мекки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>First break time</td>
+                                        <td style="color: #48742b;">19:50 по времени Мекки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Возобновление курса</td>
+                                        <td style="color: #48742b;">20:00 по времени Мекки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Время второго перерыва</td>
+                                        <td style="color: #48742b;">20:50 по времени Мекки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Возобновление курса</td>
+                                        <td style="color: #48742b;">21:00 по времени Мекки</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Время окончания курса</td>
+                                        <td style="color: #48742b;">22:30 по времени Мекки</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                <br>
+                                <span style="display: block; color: #ea3223; font-weight: bold; text-align: center !important;">
+                                    Зарегистрируйтесь сейчас на курс № 3681 со взносом в размере 125 долларов США, включая плату за электронную сумку.
+                                </span>
+                                <br>
+                                <br>
+
+                                <span class="d-block text-center" style="font-weight: bold;">
+                                    Мы также приветствуем ваши запросы по электронной почте: <a href="mailto:courses@furqangroup.com">courses@furqangroup.com</a>, и мы рады, что вы присоединились к нам на Al-Qaida Al-Nuraniah канал в телеграме
+                                    чтобы следить за всеми последними новостями по следующей ссылке: <a href="https://t.me/QaidahNuraniah">https://t.me/QaidahNuraniah</a>
+                                </span>
+                                <br>
+                                <br>
+
+                                <span class="w-100 text-center d-block" style="color: black; font-weight: bold;">
+                                    Желаем всем крепкого здоровья и успехов, дай Аллах.
+                                </span>
+
+                                </p>
+
+                            @else
+
+                                <p class="text-right">
+                                    To register first, please check the <span style="color: red;">course timeline below</span>
+                                    <br>
+                                    <br>
+                                    <span class="d-block text-center" style="font-weight: bold;">The timeline of the course No. 3680</span>
+                                </p>
+
+                                <table class="ltr-table" border="2">
+                                    <tbody>
+                                    <tr>
+                                        <td>Registration Deadline</td>
+                                        <td style="color: #48742b;">Wednesday 16/2/ 2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Preliminary Test</td>
+                                        <td style="color: #48742b;">Tuesday 22/2/2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Course start</td>
+                                        <td style="color: #48742b;">Saturday 26/2/2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Course End</td>
+                                        <td style="color: #48742b;">Monday 7/3/2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>pre-exam workshops</td>
+                                        <td style="color: #48742b;">Saturday and Sunday 12-13/3/ 2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Exam’s registration start</td>
+                                        <td style="color: #48742b;">Monday 7/3/2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Exam’s registration deadline</td>
+                                        <td style="color: #48742b;">Sunday 13/3/2022</td>
+                                    </tr>
+                                    <tr>
+                                        <td>The Exam</td>
+                                        <td style="color: #48742b;">Saturday and Sunday 19-20/3/2022</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                <br>
+                                <span class="d-block text-center">Course schedule</span>
+
+                                <br>
+                                <table class="ltr-table" border="2">
+                                    <tbody>
+                                    <tr>
+                                        <td>Course start time</td>
+                                        <td style="color: #48742b;">07:00 pm Mecca time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>First break time</td>
+                                        <td style="color: #48742b;">07:50 pm Mecca time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Resumption of the course</td>
+                                        <td style="color: #48742b;">08:00 pm Mecca time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Second break time</td>
+                                        <td style="color: #48742b;">08:50 pm Mecca time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>Resumption of the course</td>
+                                        <td style="color: #48742b;">09:00 pm Mecca time</td>
+                                    </tr>
+                                    <tr>
+                                        <td>End time of the course</td>
+                                        <td style="color: #48742b;">10:30 pm Mecca time</td>
+                                    </tr>
+                                    </tbody>
+                                </table>
+
+                                <br>
+                                <span style="display: block; color: #ea3223; font-weight: bold; text-align: center !important;">
+Register now for course No. 3681 with a fee of $125, including the electronic bag fees</span>
+                                <br>
+                                <br>
+
+                                <span class="d-block text-center" style="font-weight: bold;">
+                                    We also welcome your inquiries on the e-mail: <a href="mailto:courses@furqangroup.com">courses@furqangroup.com</a>, and we are happy to have you join us on the Al-Qaida Al-Nuraniah channel on Telegram to
+                                    follow all the latest news through the following link: <a href="https://t.me/QaidahNuraniah">https://t.me/QaidahNuraniah</a>
+                                </span>
+                                <br>
+                                <br>
 
                                 <span class="w-100 text-center d-block" style="color: black; font-weight: bold;">
                                             We wish you all good health and success by Allah will.
@@ -604,7 +852,7 @@ Students from other trajectories shall be able to .enroll in the second phase of
                         <div class="form-card">
                             <div class="row">
                                 <div class="col-7">
-                                    <h2 class="fs-title">{{ __('resubscribe.Register') }}</h2>
+                                    <h2 class="fs-title">{{ __('Registration') }}</h2>
                                 </div>
                             </div>
 
@@ -722,7 +970,7 @@ Students from other trajectories shall be able to .enroll in the second phase of
 
 <!-- add frames script -->
 <script src="https://cdn.checkout.com/js/framesv2.min.js"></script>
-<script src="{{ asset('app.js') }}?v=63.61"></script>
+<script src="{{ asset('app.js') }}?v=96.01"></script>
 
 <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
 <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>

@@ -60,14 +60,13 @@ class SemesterRegistrationController extends Controller
                     ]);
 
                     if ($data->approved){
-
                         if (!$order->promoCode->code){
-                            session()->flash('error', __('resubscribe.Payment failed!'));
+                            session()->flash('error', __('Coupons not available!'));
                             return redirect()->route('semester.indexOneToOne');
                         }
                         $order->promoCode->update(['status' => '1']);
                         Notification::route('mail', [$order->email])->notify(new OrderNotification($order));
-                        session()->flash('success', __('resubscribe.The registration process has been completed successfully'));
+                        session()->flash('success', __('The registration process has been completed successfully'));
                     }else{
                         session()->flash('error', __('resubscribe.Payment failed'));
                     }

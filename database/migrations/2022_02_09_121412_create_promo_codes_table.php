@@ -16,7 +16,6 @@ class CreatePromoCodesTable extends Migration
         Schema::create('promo_codes', function (Blueprint $table) {
             $table->id();
             $table->string('code');
-            $table->enum('type', ['percentage', 'fixed']);
             $table->double('value');
             $table->enum('status', ['0', '1']);
             $table->timestamps();

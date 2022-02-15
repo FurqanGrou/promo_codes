@@ -4,7 +4,8 @@ use App\Http\Controllers\RegisterController;
 use App\Http\Controllers\SemesterRegistrationController;
 use App\Http\Controllers\ImportController;
 use App\Http\Controllers\CouponController;
-use GuzzleHttp\Client;
+use App\Notifications\OrderNotification;
+use Illuminate\Support\Facades\Notification;
 use Illuminate\Support\Facades\Route;
 
 /*
@@ -34,6 +35,10 @@ Route::group(['prefix' => LaravelLocalization::setLocale(), 'middleware' => [ 'l
     // apply coupon
     Route::get('/apply-coupon', [CouponController::class, 'applyCoupon'])->name('apply.coupon');
 
+    Route::get('/test', function (){
+        Notification::route('mail', ['hatim201499@gmail.com'])->notify(new OrderNotification(''));
+    });
+
 });
 
 Route::get('/clear-cache', function (\App\Services\GoogleSheet $googleSheet){
@@ -44,3 +49,4 @@ Route::get('/clear-cache', function (\App\Services\GoogleSheet $googleSheet){
 Auth::routes();
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
+
