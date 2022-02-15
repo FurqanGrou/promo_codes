@@ -99,20 +99,21 @@ class RegisterController extends Controller
         if ($request->payment_method == 'checkout_gateway') {
 
             $customer = ['email' => $request->email, 'name' => $request->student_name];
-            $result   = $this->payment($request->token_pay, $customer, $amount);
 
             $promo_code = PromoCode::query()->where('status', '=', '0')->inRandomOrder()->first();
             if (!$promo_code){
-                session()->flash('error', __('resubscribe.Payment failed!'));
+                session()->flash('error', __('Coupons not available!'));
                 return redirect()->route('semester.indexOneToOne');
             }
 
+            $result   = $this->payment($request->token_pay, $customer, $amount);
+
             $order = Order::query()->create([
-               'name'  =>  $request->student_name,
-               'email' =>  $request->email,
-               'promo_code_id' =>  $promo_code->id,
-               'price' =>  $amount,
-               'payment_id' => Session::get('payment_id'),
+                'name'  =>  $request->student_name,
+                'email' =>  $request->email,
+                'promo_code_id' =>  $promo_code->id,
+                'price' =>  $amount,
+                'payment_id' => Session::get('payment_id'),
                 'payment_status'   => Session::get('payment_status'),
                 'reference_number' => Session::get('reference_number'),
                 'response_code' => $result->response_code ?? '-',
@@ -129,7 +130,7 @@ class RegisterController extends Controller
                 if ($result->approved){
                     $promo_code->update(['status' => '1']);
                     Notification::route('mail', [$request->email])->notify(new OrderNotification($order));
-                    session()->flash('success', __('resubscribe.The registration process has been completed successfully'));
+                    session()->flash('success', __('The registration process has been completed successfully'));
                 }else{
                     session()->flash('error', __('resubscribe.Payment failed!'));
                 }
@@ -137,7 +138,7 @@ class RegisterController extends Controller
             }
         }
 
-        session()->flash('success', __('resubscribe.The registration process has been completed successfully'));
+        session()->flash('success', __('The registration process has been completed successfully'));
         return redirect()->route('semester.indexOneToOne');
     }
 

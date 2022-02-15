@@ -9,7 +9,7 @@ return [
   'Male' => 'Male',
   'Female' => 'Female',
   'Send' => 'Send',
-    'General information' => 'General information',
+  'General information' => 'General information',
     'Previous' => 'Previous',
     'Section' => 'Department',
     'serial number is incorrect' => 'The serial number is incorrect',
@@ -39,7 +39,7 @@ return [
     'The student ID is not in our records' => 'The student ID is not in our records',
     'The registration process has been completed successfully' => 'The registration process has been completed successfully',
     'Required' => 'Required *',
-    'Payment failed!' => 'Payment failed, please try a different card or reach us support via help@furqangroup.com',
+    'Payment failed!' => 'Payment failed, please try a different card or reach us support via courses@furqangroup.com',
     'Error' => 'Error',
     'Error 419' => 'Kindly make sure you are not using incognito mode to ensure processing the transaction successfully',
 

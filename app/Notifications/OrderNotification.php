@@ -43,7 +43,7 @@ class OrderNotification extends Notification
     public function toMail($notifiable)
     {
         return (new MailMessage())
-            ->from('Furqan@furqanreports.info')
+            ->from('noreply@furqangroup.com')
             ->subject('عملية اشتراك جديدة - ' . $this->order->name)
             ->view('emails.promo_code_order', ['order' => $this->order]);
     }
