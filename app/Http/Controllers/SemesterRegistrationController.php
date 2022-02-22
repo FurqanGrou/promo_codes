@@ -68,17 +68,17 @@ class SemesterRegistrationController extends Controller
                         Notification::route('mail', [$order->email])->notify(new OrderNotification($order));
                         session()->flash('success', __('The registration process has been completed successfully'));
                     }else{
-                        session()->flash('error', __('resubscribe.Payment failed'));
+                        session()->flash('error', __('resubscribe.Payment failed!'));
                     }
 
                 }else{
-                    session()->flash('error', __('resubscribe.Payment failed'));
+                    session()->flash('error', __('resubscribe.Payment failed!'));
                 }
 
                 return redirect()->route('semester.indexOneToOne');
             }catch (\GuzzleHttp\Exception\ClientException $e) {
 //                $response = $e->getResponse();
-                session()->flash('error', __('resubscribe.Payment failed'));
+                session()->flash('error', __('resubscribe.Payment failed!'));
                 return redirect()->route('semester.indexOneToOne');
             }
         }

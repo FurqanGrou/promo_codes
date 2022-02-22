@@ -23,7 +23,6 @@ class Order extends Model
         return ($this->price/100);
     }
 
-
     public static function booted()
     {
         static::created(function($order) {
@@ -35,7 +34,7 @@ class Order extends Model
                     $created_at  ?? '-', $order->promoCode->code  ?? '-',
                     $order->email ?? '-', $order->name ?? '-', $order->cost ?? '-',
                     $order->payment_status ?? '-', $order->response_code ?? '-',
-                    $order->reference_number  ?? '-'
+                    $order->reference_number  ?? '-', $order->phone_number ?? '-'
                 ],
             ];
 
@@ -51,7 +50,7 @@ class Order extends Model
                     $created_at  ?? '-', $order->promoCode->code  ?? '-',
                     $order->email ?? '-', $order->name ?? '-', $order->cost ?? '-',
                     $order->payment_status ?? '-', $order->response_code ?? '-',
-                    $order->reference_number  ?? '-'
+                    $order->reference_number  ?? '-', $order->phone_number ?? '-'
                 ],
             ];
 

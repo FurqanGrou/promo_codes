@@ -111,6 +111,7 @@ class RegisterController extends Controller
             $order = Order::query()->create([
                 'name'  =>  $request->student_name,
                 'email' =>  $request->email,
+                'phone_number' =>  $request->phone_number,
                 'promo_code_id' =>  $promo_code->id,
                 'price' =>  $amount,
                 'payment_id' => Session::get('payment_id'),
