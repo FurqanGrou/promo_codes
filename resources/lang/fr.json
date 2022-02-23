@@ -10,7 +10,7 @@
 
     "Form Title": "Bienvenue à Furqan Group for Education & IT ..",
     "Sorry just": "Sorry, one-to-one subscriptions are allowed for memorization path only. You can subscribe in the General Education path from <a href='https://furqanshop.com/eservices_checkout/'>here</a>",
-    "Payment via credit card": "Nous acceptons toutes les cartes bancaires (Mada - VISA- Mastercard - American express - autres) <br> Total des frais de scolarité = :amount",
+    "Payment via credit card": "Nous acceptons toutes les cartes bancaires (Mada - VISA- Mastercard - American express - autres) <br> Total des frais de scolarité = <span style='color:red;font-size: 18px;'> :amount$</span>",
     "HSBC Bank": "Transfert international (HSBC Bank) --> Total des frais de scolarité + frais bancaires = :amount",
     "please select best time": "Assurez-vous d'entrer votre heure préférée!",
     "Choose your preferred schedule": "Choisissez votre horaire préféré",
@@ -27,5 +27,8 @@
     "Do not hesitate to contact us through the following email if you have any questions": "✉ N'hésitez pas à nous contacter via l'email suivant si vous avez des questions:",
     "We are pleased for your joining Al Nuraniah course. Thank you for your trust": "☺ Nous sommes heureux de nous rejoindre à travers Al Nuraniah Cours. Merci pour ta confiance \uD83C\uDF38",
     "The registration process has been completed successfully": "Le code promo a été envoyé par e-mail",
-    "youtube_link": "https://www.youtube.com/watch?v=L9yUH9WiCY0"
+    "youtube_link": "https://www.youtube.com/watch?v=L9yUH9WiCY0",
+
+    "phone": "Téléphoner"
+
 }

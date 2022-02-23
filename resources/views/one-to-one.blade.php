@@ -872,6 +872,11 @@ Register now for course No. 3681 with a fee of $125, including the electronic ba
                                 <input type="email" class="form-control" id="std-email-conf" placeholder="{{ __('resubscribe.Confirm Email') }}" required>
                             </div>
 
+                            <div class="form-group text-right" id="std-phone">
+                                <label for="std-phone">{{ __('phone') }}</label>
+                                <input type="number" class="form-control" id="std-phone-number" name="phone_number" placeholder="{{ __('phone') }}" required>
+                            </div>
+
                         </div>
                         <input type="button" name="next" class="next action-button" value="{{ __('resubscribe.Next') }}" />
                         <input type="button" name="previous" class="previous action-button-previous" value="{{ __('resubscribe.Previous') }}" />
@@ -903,7 +908,7 @@ Register now for course No. 3681 with a fee of $125, including the electronic ba
                                 <div class="form-check text-right">
                                     <input class="form-check-input w-auto" type="radio" name="payment_method" id="checkout_gateway" value="checkout_gateway">
                                     <label class="form-check-label mr-4" for="checkout_gateway">
-                                        {!! __('Payment via credit card', ['amount' => $course->price]) . '$' !!}
+                                        {!! __('Payment via credit card', ['amount' => $course->price]) !!}
                                     </label>
                                     <img class="text-center d-block" style="width: 38%;margin: auto;margin-top: 9px;" src="{{ asset('card-icons/cards.png') }}" alt="Cards icons">
                                 </div>
